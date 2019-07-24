@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<inMessage>
+	<element name="BankCode" xpath="Transaction.Comdict.PartyRef.BankCode"
+		type="String" />
+	<element name="Brc" xpath="Transaction.Comdict.PartyRef.Brc"
+		type="String" />
+	<element name="BrcName0" xpath="Transaction.Comdict.PartyRef.BrcName0"
+		type="String" />
+	<element name="BrcType0" xpath="Transaction.Comdict.PartyRef.BrcType0"
+		type="String" />
+	<element name="BrcState0" xpath="Transaction.Comdict.PartyRef.BrcState0"
+		type="String" />
+	<element name="Teller" xpath="Transaction.Comdict.PartyRef.Teller"
+		type="String" />
+	<element name="TellerName" xpath="Transaction.Comdict.PartyRef.TellerName"
+		type="String" />
+	<element name="TellerLvl0" xpath="Transaction.Comdict.PartyRef.TellerLvl0"
+		type="String" />
+	<element name="TellerType" xpath="Transaction.Comdict.PartyRef.TellerType"
+		type="String" />
+	<element name="TellerState0" xpath="Transaction.Comdict.PartyRef.TellerState0"
+		type="String" />
+	<element name="TellerFlag" xpath="Transaction.Comdict.PartyRef.TellerFlag"
+		type="String" />
+	<element name="FrontCtrlFlag" xpath="Transaction.Comdict.FlagRef.FrontCtrlFlag"
+		type="String" />
+	<element name="AuthFlag" xpath="Transaction.Comdict.FlagRef.AuthFlag"
+		type="String" />
+	<element name="ReviewFlag" xpath="Transaction.Comdict.FlagRef.ReviewFlag"
+		type="String" />
+	<element name="FileFlag" xpath="Transaction.Comdict.FlagRef.FileFlag"
+		type="String" />
+	<element name="FeeFlag" xpath="Transaction.Comdict.FlagRef.FeeFlag"
+		type="String" />
+	<element name="FeeModFlag1" xpath="Transaction.Comdict.FlagRef.FeeModFlag1"
+		type="String" />
+	<element name="FileName" xpath="Transaction.Comdict.FileName"
+		type="String" />
+	<element name="ChannelId" xpath="Transaction.Comdict.ChannelId"
+		type="String" />
+	<element name="TranDate" xpath="Transaction.Comdict.TranDate"
+		type="String" />
+	<element name="TranTime" xpath="Transaction.Comdict.TranTime"
+		type="String" />
+	<element name="TranName" xpath="Transaction.Comdict.TranName"
+		type="String" />
+	<element name="NoticeMsg" xpath="Transaction.Comdict.NoticeMsg"
+		type="String" />
+	<element name="CDDM" xpath="Transaction.Comdict.CDDM" type="String" />
+	<element name="CDMC" xpath="Transaction.Comdict.CDMC" type="String" />
+	<element name="InqFormid" xpath="Transaction.Comdict.InqFormid"
+		type="String" />
+	<element name="HsmId" xpath="Transaction.Comdict.HsmId"
+		type="String" />
+	<element name="RspCode" xpath="Transaction.Comdict.RspCode"
+		type="String" />
+	<element name="RspMsg" xpath="Transaction.Comdict.FileName"
+		type="RspMsg" />
+	<element name="SerSeqNo" xpath="Transaction.Comdict.SerSeqNo"
+		type="String" />
+	<element name="ABrc" xpath="Transaction.Comdict.AuthRef.ABrc"
+		type="String" />
+	<element name="ATeller" xpath="Transaction.Comdict.AuthRef.ATeller"
+		type="String" />
+	<element name="ATelName" xpath="Transaction.Comdict.AuthRef.ATelName"
+		type="String" />
+	<element name="ATellerFlag" xpath="Transaction.Comdict.AuthRef.ATellerFlag"
+		type="String" />
+	<element name="AuthArea" xpath="Transaction.Comdict.AuthRef.AuthArea"
+		type="String" />
+	<element name="AuthArr" xpath="Transaction.Comdict.AuthRef.AuthArr"
+		type="String" />
+	<element name="AuthCode" xpath="Transaction.Comdict.AuthRef.AuthCode"
+		type="String" />
+	<element name="AuthMsg" xpath="Transaction.Comdict.AuthRef.AuthMsg"
+		type="String" />
+	<element name="AuthNoticeMsg" xpath="Transaction.Comdict.AuthRef.AuthNoticeMsg"
+		type="String" />
+	<element name="AuthSeq" xpath="Transaction.Comdict.AuthRef.AuthSeq"
+		type="String" />
+	<element name="AuthWork" xpath="Transaction.Comdict.AuthRef.AuthWork"
+		type="String" />
+	<list name="FeeInfo" xpath="Transaction.Comdict.FeeInfoList.FeeInfo">
+		<element name="FeeCode" xpath="FeeCode" type="String" />
+		<element name="FeeDesc" xpath="FeeDesc" type="String" />
+		<element name="FeeCcy" xpath="FeeCcy" type="String" />
+		<element name="FeeAmt" xpath="FeeAmt" type="String" />
+		<element name="FeeAcctNo" xpath="FeeAcctNo" type="String" />
+		<element name="FeePayAcctNo" xpath="FeePayAcctNo" type="String" />
+		<element name="FeePaySubAcct" xpath="FeePaySubAcct" type="String" />
+		<element name="FeeBrcType" xpath="FeeBrcType" type="String" />
+		<element name="FeeBrcCode" xpath="FeeBrcCode" type="String" />
+		<element name="FeePaySrc" xpath="FeePaySrc" type="String" />
+		<element name="FeeCashItemCode" xpath="FeeCashItemCode" type="String" />
+	</list>
+	<element name="ReviewNo" xpath="Transaction.Comdict.ReviewRef.ReviewNo"
+		type="String" />
+	<element name="RTeller" xpath="Transaction.Comdict.ReviewRef.RTeller"
+		type="String" />
+	<element name="RTelName" xpath="Transaction.Comdict.ReviewRef.RTelName"
+		type="String" />
+	<element name="TermId" xpath="Transaction.Comdict.TermRef.TermId"
+		type="String" />
+	<element name="TermDate" xpath="Transaction.Comdict.TermRef.TermDate"
+		type="String" />
+	<element name="TermTime" xpath="Transaction.Comdict.TermRef.TermTime"
+		type="String" />
+	<element name="TermSeq" xpath="Transaction.Comdict.TermRef.TermSeq"
+		type="String" />
+	<element name="OrigTermCode" xpath="Transaction.Comdict.TermRef.OrigTermCode"
+		type="String" />
+	<element name="OrigTermDate" xpath="Transaction.Comdict.TermRef.OrigTermDate"
+		type="String" />
+	<element name="OrigTermSeq" xpath="Transaction.Comdict.TermRef.OrigTermSeq"
+		type="String" />
+	<element name="TellerCode" xpath="Transaction.Txndict.TellerCode"
+		type="String" />
+</inMessage>

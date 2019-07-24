@@ -1,0 +1,195 @@
+<#macro initComma level=0>
+<#if level=0>
+<#assign commaArray=["true"]>
+<#else>
+<#assign commaArray=commaArray[0..<level]+["true"]>
+</#if>
+</#macro>
+<#macro setComma clvl=0>
+<#if clvl=0>
+<#assign commaArray=["false"]>
+<#else>
+<#assign commaArray=commaArray[0..<clvl]+["false"]>
+</#if>
+</#macro>
+<#macro ele name value=name?lower_case?eval!"" level=0>
+<#if value!="">
+<#if commaArray[level]="false">
+,<#rt>
+</#if>
+"${name}":"${value}"<#rt>
+<@setComma level/>
+</#if>
+</#macro>
+<#macro grp name lvl=0>
+<#lt>
+<#if commaArray[lvl]="false">
+,<#rt>
+</#if>
+<#local nextlvl=lvl+1>
+<#lt>"${name}":{<@initComma nextlvl/><#nested nextlvl>}<#rt>
+<@setComma lvl/>
+</#macro>
+<#macro lst name value level>
+<#if value?? && (value?size>0)>
+<#if commaArray[level]="false">
+<#lt>,<#rt>
+</#if>
+<#local nextlvl=level+1>
+"${name}":[
+<#list value as v>
+{
+<@initComma nextlvl/>
+<#nested v nextlvl>
+}
+<#if v_has_next>,</#if>
+</#list>
+]
+<@setComma level/>
+</#if>
+</#macro>
+<#macro root>
+<@compress single_line=true>
+{
+  <@initComma 0 />
+  <#nested>
+}
+</@compress>
+</#macro>
+<@root>
+<@grp  "Transaction",0 >
+<@grp  "Comdict",1 >
+<@ele  "ABrc",abrc,2/>
+<@ele  "ATeller",ateller,2/>
+<@ele  "ATellerFlag",atellerflag,2/>
+<@ele  "ATelName",atelname,2/>
+<@ele  "AuthArea",autharea,2/>
+<@ele  "AuthArr",autharr,2/>
+<@ele  "AuthAttr",authattr,2/>
+<@ele  "AuthCode",authcode,2/>
+<@ele  "AuthFlag",authflag,2/>
+<@ele  "AuthMsg",authmsg,2/>
+<@ele  "AuthNoticeMsg",authnoticemsg,2/>
+<@ele  "AuthRegFlag",authregflag,2/>
+<@ele  "AuthSeq",authseq,2/>
+<@ele  "AuthWork",authwork,2/>
+<@ele  "BankCode",bankcode,2/>
+<@ele  "BoxFlag0",boxflag0,2/>
+<@ele  "BoxStat0",boxstat0,2/>
+<@ele  "BoxTktFlag0",boxtktflag0,2/>
+<@ele  "Brc",brc,2/>
+<@ele  "BrcAttr0",brcattr0,2/>
+<@ele  "BrcLvl0",brclvl0,2/>
+<@ele  "BrcName0",brcname0,2/>
+<@ele  "BrcShName0",brcshname0,2/>
+<@ele  "BrcState0",brcstate0,2/>
+<@ele  "BrcType0",brctype0,2/>
+<@ele  "CashBoxNo0",cashboxno0,2/>
+<@ele  "CashList0",cashlist0,2/>
+<@ele  "CDDM",cddm,2/>
+<@ele  "CDMC",cdmc,2/>
+<@ele  "ChannelId",channelid,2/>
+<@ele  "CheckSerSeqNo",checkserseqno,2/>
+<@ele  "CPXH",cpxh,2/>
+<@ele  "FeeAcctNo1",feeacctno1,2/>
+<@ele  "FeeAcctNo2",feeacctno2,2/>
+<@ele  "FeeAcctNo3",feeacctno3,2/>
+<@ele  "FeeAcctNo4",feeacctno4,2/>
+<@ele  "FeeAcctNo5",feeacctno5,2/>
+<@ele  "FeeAmt1",feeamt1,2/>
+<@ele  "FeeAmt2",feeamt2,2/>
+<@ele  "FeeAmt3",feeamt3,2/>
+<@ele  "FeeAmt4",feeamt4,2/>
+<@ele  "FeeAmt5",feeamt5,2/>
+<@ele  "FeeCashItemCode1",feecashitemcode1,2/>
+<@ele  "FeeCashItemCode2",feecashitemcode2,2/>
+<@ele  "FeeCashItemCode3",feecashitemcode3,2/>
+<@ele  "FeeCashItemCode4",feecashitemcode4,2/>
+<@ele  "FeeCashItemCode5",feecashitemcode5,2/>
+<@ele  "FeeCcy1",feeccy1,2/>
+<@ele  "FeeCcy2",feeccy2,2/>
+<@ele  "FeeCcy3",feeccy3,2/>
+<@ele  "FeeCcy4",feeccy4,2/>
+<@ele  "FeeCcy5",feeccy5,2/>
+<@ele  "FeeCode1",feecode1,2/>
+<@ele  "FeeCode2",feecode2,2/>
+<@ele  "FeeCode3",feecode3,2/>
+<@ele  "FeeCode4",feecode4,2/>
+<@ele  "FeeCode5",feecode5,2/>
+<@ele  "FeeDesc1",feedesc1,2/>
+<@ele  "FeeDesc2",feedesc2,2/>
+<@ele  "FeeDesc3",feedesc3,2/>
+<@ele  "FeeDesc4",feedesc4,2/>
+<@ele  "FeeDesc5",feedesc5,2/>
+<@ele  "FeeFlag",feeflag,2/>
+<@ele  "FeeModFlag1",feemodflag1,2/>
+<@ele  "FeeModFlag2",feemodflag2,2/>
+<@ele  "FeeModFlag3",feemodflag3,2/>
+<@ele  "FeeModFlag4",feemodflag4,2/>
+<@ele  "FeeModFlag5",feemodflag5,2/>
+<@ele  "FeePayAcctName1",feepayacctname1,2/>
+<@ele  "FeePayAcctName2",feepayacctname2,2/>
+<@ele  "FeePayAcctName3",feepayacctname3,2/>
+<@ele  "FeePayAcctName4",feepayacctname4,2/>
+<@ele  "FeePayAcctName5",feepayacctname5,2/>
+<@ele  "FeePayAcctNo1",feepayacctno1,2/>
+<@ele  "FeePayAcctNo2",feepayacctno2,2/>
+<@ele  "FeePayAcctNo3",feepayacctno3,2/>
+<@ele  "FeePayAcctNo4",feepayacctno4,2/>
+<@ele  "FeePayAcctNo5",feepayacctno5,2/>
+<@ele  "FeePayName",feepayname,2/>
+<@ele  "FeePaySrc1",feepaysrc1,2/>
+<@ele  "FeePaySrc2",feepaysrc2,2/>
+<@ele  "FeePaySrc3",feepaysrc3,2/>
+<@ele  "FeePaySrc4",feepaysrc4,2/>
+<@ele  "FeePaySrc5",feepaysrc5,2/>
+<@ele  "FeePayTime1",feepaytime1,2/>
+<@ele  "FeePayTime2",feepaytime2,2/>
+<@ele  "FeePayTime3",feepaytime3,2/>
+<@ele  "FeePayTime4",feepaytime4,2/>
+<@ele  "FeePayTime5",feepaytime5,2/>
+<@ele  "FeeRelAcctNo1",feerelacctno1,2/>
+<@ele  "FeeRelAcctNo2",feerelacctno2,2/>
+<@ele  "FeeRelAcctNo3",feerelacctno3,2/>
+<@ele  "FeeRelAcctNo4",feerelacctno4,2/>
+<@ele  "FeeRelAcctNo5",feerelacctno5,2/>
+<@ele  "FileFlag",fileflag,2/>
+<@ele  "FileName",filename,2/>
+<@ele  "FileName1",filename1,2/>
+<@ele  "FileName2",filename2,2/>
+<@ele  "FileName3",filename3,2/>
+<@ele  "FrntNo",frntno,2/>
+<@ele  "FrontCtrlFlag",frontctrlflag,2/>
+<@ele  "GET_CPXH",get_cpxh,2/>
+<@ele  "HsmId",hsmid,2/>
+<@ele  "InqFormid",inqformid,2/>
+<@ele  "IOFlag",ioflag,2/>
+<@ele  "ReviewFlag",reviewflag,2/>
+<@ele  "ReviewNo",reviewno,2/>
+<@ele  "RspCode",rspcode,2/>
+<@ele  "RspMsg",rspmsg,2/>
+<@ele  "RTeller",rteller,2/>
+<@ele  "RTelName",rtelname,2/>
+<@ele  "SerSeqNo",serseqno,2/>
+<@ele  "Teller",teller,2/>
+<@ele  "TellerFlag",tellerflag,2/>
+<@ele  "TellerLvl0",tellerlvl0,2/>
+<@ele  "TellerName",tellername,2/>
+<@ele  "TellerState0",tellerstate0,2/>
+<@ele  "TellerType0",tellertype0,2/>
+<@ele  "TermDate",termdate,2/>
+<@ele  "TermId",termid,2/>
+<@ele  "TermSeq",termseq,2/>
+<@ele  "TermTime",termtime,2/>
+<@ele  "TranDate",trandate,2/>
+<@ele  "TranIdxCode",tranidxcode,2/>
+<@ele  "TranName",tranname,2/>
+<@ele  "TranTime",trantime,2/>
+<@ele  "VouBoxNo0",vouboxno0,2/>
+<@ele  "VouList0",voulist0,2/>
+</@grp>
+<@grp  "Txndict",1 >
+<@ele  "BatchNo",.globals["01.batchno"],2/>
+</@grp>
+</@grp>
+</@root>

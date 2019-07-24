@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="cn.com.git.cbs.engine.datamodel.TBL_Subinput" >
+  		<resultMap id="BaseResultMap" type="cn.com.git.cbs.engine.datamodel.TBL_Subinput" >
+			<result column="LOCALNAME" property="localname" jdbcType="CHAR" />					 		
+			<result column="MUID" property="muid" jdbcType="CHAR" />					 		
+			<result column="PUID" property="puid" jdbcType="CHAR" />					 		
+			<result column="WUMARK" property="wumark" jdbcType="CHAR" />					 		
+			<result column="MAPMODE" property="mapmode" jdbcType="CHAR" />					 		
+			<result column="DATAAREA" property="dataarea" jdbcType="CHAR" />					 		
+			<result column="POOLNAME" property="poolname" jdbcType="CHAR" />					 		
+			<result column="POOLWUMARK" property="poolwumark" jdbcType="CHAR" />					 		
+			<result column="FIXVALUE" property="fixvalue" jdbcType="VARCHAR" />					 		
+			<result column="DATADICNAME" property="datadicname" jdbcType="CHAR" />					 		
+		</resultMap>
+
+ 		<sql id="Base_Column_List" >
+			LOCALNAME,MUID,PUID,
+			WUMARK,MAPMODE,DATAAREA,POOLNAME,
+			POOLWUMARK,FIXVALUE,DATADICNAME
+		</sql> 	
+			
+		<select id="selSubinputListByIdx1" resultMap="BaseResultMap" parameterType="cn.com.git.cbs.engine.datamodel.TBL_Subinput" >	
+			select
+			<include refid="Base_Column_List" />
+			from SUBINPUT
+			where  1=1
+				<if test="muid!= null" >
+					 AND MUID = #{muid, jdbcType=CHAR}
+				</if>
+				<if test="wumark!= null" >
+					 AND WUMARK = #{wumark, jdbcType=CHAR}
+				</if>
+			 ORDER BY localname
+		</select>					 		
+  	  	  	
+</mapper>      					  			 
+
+
+
+		
+		
+	
+		

@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="cn.com.git.cbs.engine.datamodel.TBL_Maintxdef" >
+  		<resultMap id="BaseResultMap" type="cn.com.git.cbs.engine.datamodel.TBL_Maintxdef" >
+			<result column="MUID" property="muid" jdbcType="CHAR" />					 		
+			<result column="MUNAME" property="muname" jdbcType="VARCHAR" />					 		
+			<result column="SUBID" property="subid" jdbcType="CHAR" />					 		
+			<result column="TRANTYPE" property="trantype" jdbcType="CHAR" />					 		
+			<result column="TRANMODE" property="tranmode" jdbcType="CHAR" />					 		
+			<result column="SYSMODE" property="sysmode" jdbcType="CHAR" />					 		
+			<result column="COMMMODE" property="commmode" jdbcType="CHAR" />					 		
+			<result column="MSGMODE" property="msgmode" jdbcType="CHAR" />					 		
+			<result column="MACCHK" property="macchk" jdbcType="CHAR" />					 		
+			<result column="TELLERCHK" property="tellerchk" jdbcType="CHAR" />					 		
+			<result column="BRANCHCHK" property="branchchk" jdbcType="CHAR" />					 		
+			<result column="RSVFLAG1" property="rsvflag1" jdbcType="CHAR" />					 		
+			<result column="RSVFLAG2" property="rsvflag2" jdbcType="CHAR" />					 		
+			<result column="RSVFLAG3" property="rsvflag3" jdbcType="CHAR" />					 		
+			<result column="RSVFLAG4" property="rsvflag4" jdbcType="CHAR" />					 		
+			<result column="RSVFLAG5" property="rsvflag5" jdbcType="CHAR" />					 		
+			<result column="RSVFLAG6" property="rsvflag6" jdbcType="CHAR" />					 		
+			<result column="RSVITEM1" property="rsvitem1" jdbcType="VARCHAR" />					 		
+			<result column="RSVITEM2" property="rsvitem2" jdbcType="VARCHAR" />					 		
+			<result column="RSVITEM3" property="rsvitem3" jdbcType="VARCHAR" />					 		
+			<result column="RSVITEM4" property="rsvitem4" jdbcType="VARCHAR" />					 		
+			<result column="RSVITEM5" property="rsvitem5" jdbcType="VARCHAR" />					 		
+			<result column="RSVITEM6" property="rsvitem6" jdbcType="VARCHAR" />					 		
+		</resultMap>
+
+ 		<sql id="Base_Column_List" >
+			MUID,MUNAME,SUBID,
+			TRANTYPE,TRANMODE,SYSMODE,COMMMODE,
+			MSGMODE,MACCHK,TELLERCHK,BRANCHCHK,
+			RSVFLAG1,RSVFLAG2,RSVFLAG3,RSVFLAG4,
+			RSVFLAG5,RSVFLAG6,RSVITEM1,RSVITEM2,
+			RSVITEM3,RSVITEM4,RSVITEM5,RSVITEM6
+		</sql> 	
+			
+		<select id="selMaintxdefByIdx1" resultMap="BaseResultMap" parameterType="cn.com.git.cbs.engine.datamodel.TBL_Maintxdef" >	
+			select
+			<include refid="Base_Column_List" />
+			from MAINTXDEF
+			where MUID=#{muid, jdbcType=CHAR}
+		</select>					 		
+  	  	  	
+</mapper>      					  			 
+
+
+
+		
+		
+	
+		

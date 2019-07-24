@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="cn.com.git.cbs.engine.datamodel.TBL_Subtxdef" >
+  		<resultMap id="BaseResultMap" type="cn.com.git.cbs.engine.datamodel.TBL_Subtxdef" >
+			<result column="WUID" property="wuid" jdbcType="CHAR" />					 		
+			<result column="WUNAME" property="wuname" jdbcType="CHAR" />					 		
+			<result column="SUBID" property="subid" jdbcType="CHAR" />					 		
+			<result column="WUFUNC" property="wufunc" jdbcType="CHAR" />					 		
+			<result column="WUREVFUNC" property="wurevfunc" jdbcType="CHAR" />					 		
+			<result column="WUALWREVFLAG" property="wualwrevflag" jdbcType="CHAR" />					 		
+			<result column="WUTYPE" property="wutype" jdbcType="CHAR" />					 		
+			<result column="WUMODE" property="wumode" jdbcType="CHAR" />					 		
+			<result column="WULEVEL" property="wulevel" jdbcType="CHAR" />					 		
+			<result column="RSVITEM1" property="rsvitem1" jdbcType="CHAR" />					 		
+			<result column="RSVITEM2" property="rsvitem2" jdbcType="CHAR" />					 		
+		</resultMap>
+
+ 		<sql id="Base_Column_List" >
+			WUID,WUNAME,SUBID,
+			WUFUNC,WUREVFUNC,WUALWREVFLAG,WUTYPE,
+			WUMODE,WULEVEL,RSVITEM1,RSVITEM2
+		</sql> 	
+			
+		<select id="selSubtxdefByIdx1" resultMap="BaseResultMap" parameterType="cn.com.git.cbs.engine.datamodel.TBL_Subtxdef" >	
+			select
+			<include refid="Base_Column_List" />
+			from SUBTXDEF
+			where  1=1
+				<if test="wuid!= null" >
+					 AND WUID = #{wuid, jdbcType=CHAR}
+				</if>
+		</select>					 		
+  	  	  	
+</mapper>      					  			 
+
+
+
+		
+		
+	
+		

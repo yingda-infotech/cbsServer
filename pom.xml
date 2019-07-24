@@ -1,0 +1,88 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+
+	<groupId>cn.com.git.cbs</groupId>
+	<artifactId>cbsServer</artifactId>
+	<version>0.0.1-SNAPSHOT</version>
+	<packaging>pom</packaging>
+	<repositories>
+		<!-- <repository> <id>nexus-repos</id> <name>Team Nexus Repository</name> 
+			<url>http://10.100.14.13:8081/nexus/content/groups/public/</url> </repository> -->
+		<repository>
+			<snapshots>
+				<enabled>false</enabled>
+			</snapshots>
+			<id>central</id>
+			<name>Central Repository</name>
+			<url>http://10.100.21.201:8081/nexus/content/groups/public/</url>
+		</repository>
+	</repositories>
+	<!-- 设定插件仓库 -->
+	<pluginRepositories>
+
+		<pluginRepository>
+			<id>central</id>
+			<name>Team Nexus Repository</name>
+			<url>http://10.100.21.201:8081/nexus/content/groups/public/</url>
+		</pluginRepository>
+
+
+	</pluginRepositories>
+
+	<modules>
+		<module>parent</module>
+		<module>service-gateway</module>
+		<module>launcher</module>
+		<module>tpmanager</module>
+		<module>foundation</module>
+		<module>tpbatch</module>
+		<module>batch-agent</module>
+		<module>tpcore</module>
+		<module>message-conv</module>
+		<module>batchcore</module>
+		<module>batch-biz</module>
+	</modules>
+	<build><plugins><plugin>
+					<inherited>true</inherited>
+					<groupId>org.apache.maven.plugins</groupId>
+					<artifactId>maven-javadoc-plugin</artifactId>
+					<version>2.10.4</version>
+					<configuration>
+						<charset>UTF-8</charset>
+						<encoding>UTF-8</encoding>
+						<docencoding>UTF-8</docencoding>
+						<aggregate>true</aggregate>
+						<show>public</show>
+						<doclet>com.docflex.javadoc.Doclet</doclet>
+						<docletPath>D:/Java/docflex-doclet-1.6.1/lib/docflex-doclet.jar</docletPath>
+						<!-- Specifying command-line parameters for DocFlex Doclet -->
+						<additionalparam>
+						<!-- The main template -->
+						-template D:/Java/docflex-doclet-1.6.1/templates/Javadoc/PlainDoc.tpl
+						<!-- Pass template parameters -->
+						-p:windowTitle "DocFlex Doclet Output"
+						-p:docTitle "Java交易平台详细设计"
+						<!-- The output format -->
+						-format RTF
+						<!-- Do not launch documentation viewer -->
+						-launchviewer=false
+						<!-- Tell DocFlex Doclet the location of the output directory -->
+						-d ${project.build.directory}/site/docflex_doclet_output
+						</additionalparam>
+						<excludePackageNames>com.greenpineyu.fel</excludePackageNames>
+						<tags>
+							<tag>
+								<name>Description</name>
+								<placement>a</placement>
+								<head>用途</head>
+							</tag>
+							<tag>
+								<name>See</name>
+								<placement>a</placement>
+								<head>参见</head>
+							</tag>
+						</tags>
+					</configuration>
+				</plugin></plugins></build>
+</project>

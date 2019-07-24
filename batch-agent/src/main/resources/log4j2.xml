@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<Configuration status="WARN"
+	packages="cn.com.git.cbs.log" monitorInterval="1800">
+	<properties>
+		<property name="LOG_HOME">./logs</property>
+		<property name="APP_LOG_PATTERN">[ %highlight{%p} ] %d{yyyy-MM-dd HH:mm:ss,SSS}|%F|%L|%msg%n%ex{short.message}</property>
+		<property name="ERROR_LOG_FILE_NAME">error</property>
+	</properties>
+
+
+	<Appenders>
+		<Console name="Console" target="SYSTEM_OUT">
+			<PatternLayout pattern="${APP_LOG_PATTERN}" />
+		</Console>
+		<RollingFile name="sysLog"
+			fileName="${LOG_HOME}/tpmanager.log"
+			filePattern="${LOG_HOME}/tpmanager-%d{yyyy-MM-dd}-%i.log.gz">
+			<PatternLayout charset="utf-8">
+				<Pattern>${APP_LOG_PATTERN}</Pattern>
+			</PatternLayout>
+			<Policies>
+				<TimeBasedTriggeringPolicy interval="6"
+					modulate="true" />
+				<SizeBasedTriggeringPolicy size="10 MB" />
+			</Policies>
+		</RollingFile>
+	</Appenders>
+
+	<Loggers>
+		<logger name="platform" level="DEBUG" additivity="false">
+			<appender-ref ref="Console" />
+			<appender-ref ref="sysLog" />
+		</logger>
+		<!-- 输出mybaitis的sql日志 -->
+		<logger name="SQLLOG" level="DEBUG"
+			additivity="false">
+			<appender-ref ref="Console" />
+			<appender-ref ref="sysLog" />
+		</logger>
+		<root level="INFO">
+			<appender-ref ref="Console" />
+			<appender-ref ref="sysLog" />
+		</root>
+	</Loggers>
+</Configuration>  

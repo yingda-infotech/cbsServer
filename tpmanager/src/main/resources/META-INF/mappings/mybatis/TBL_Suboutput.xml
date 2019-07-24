@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="cn.com.git.cbs.engine.datamodel.TBL_Suboutput" >
+  		<resultMap id="BaseResultMap" type="cn.com.git.cbs.engine.datamodel.TBL_Suboutput" >
+			<result column="MUID" property="muid" jdbcType="CHAR" />					 		
+			<result column="WUMARK" property="wumark" jdbcType="CHAR" />					 		
+			<result column="POOLWUMARK" property="poolwumark" jdbcType="CHAR" />					 		
+			<result column="POOLNAME" property="poolname" jdbcType="VARCHAR" />					 		
+			<result column="MAPMODE" property="mapmode" jdbcType="CHAR" />					 		
+			<result column="LOCALNAME" property="localname" jdbcType="VARCHAR" />					 		
+			<result column="FIXVALUE" property="fixvalue" jdbcType="VARCHAR" />					 		
+			<result column="DATADICNAME" property="datadicname" jdbcType="CHAR" />					 		
+		</resultMap>
+
+ 		<sql id="Base_Column_List" >
+			MUID,WUMARK,POOLWUMARK,
+			POOLNAME,MAPMODE,LOCALNAME,FIXVALUE,
+			DATADICNAME
+		</sql> 	
+			
+		<select id="selSuboutputByIdx1" resultMap="BaseResultMap" parameterType="cn.com.git.cbs.engine.datamodel.TBL_Suboutput" >	
+			select
+			<include refid="Base_Column_List" />
+			from SUBOUTPUT
+			where  1=1
+				<if test="muid!= null" >
+					 AND MUID = #{muid, jdbcType=CHAR}
+				</if>
+				<if test="wumark!= null" >
+					 AND WUMARK = #{wumark, jdbcType=CHAR}
+				</if>
+				<if test="localname!= null" >
+					 AND LOCALNAME = #{localname, jdbcType=VARCHAR}
+				</if>
+		</select>					 		
+			
+		<select id="selSuboutputListByIdx1" resultMap="BaseResultMap" parameterType="cn.com.git.cbs.engine.datamodel.TBL_Suboutput" >	
+			select
+			<include refid="Base_Column_List" />
+			from SUBOUTPUT
+			where  1=1
+				<if test="muid!= null" >
+					 AND MUID = #{muid, jdbcType=CHAR}
+				</if>
+				<if test="wumark!= null" >
+					 AND WUMARK = #{wumark, jdbcType=CHAR}
+				</if>
+				<if test="poolwumark!= null" >
+					 AND POOLWUMARK = #{poolwumark, jdbcType=CHAR}
+				</if>
+				<if test="poolname!= null" >
+					 ANDPOOLNAME = #{poolname, jdbcType=VARCHAR}
+				</if>
+				<if test="mapmode!= null" >
+					 AND MAPMODE = #{mapmode, jdbcType=CHAR}
+				</if>
+				<if test="localname!= null" >
+					 AND LOCALNAME = #{localname, jdbcType=VARCHAR}
+				</if>
+				<if test="fixvalue!= null" >
+					 AND FIXVALUE = #{fixvalue, jdbcType=VARCHAR}
+				</if>
+				<if test="datadicname!= null" >
+					 ANDDATADICNAME = #{datadicname, jdbcType=CHAR}
+				</if>
+			 ORDER BY muid,wumark,localname
+		</select>					 		
+			
+		<select id="selupdSuboutputByIdx1" resultMap="BaseResultMap" parameterType="cn.com.git.cbs.engine.datamodel.TBL_Suboutput" >	
+			select
+			<include refid="Base_Column_List" />
+			from SUBOUTPUT
+			where  1=1
+				<if test="muid!= null" >
+					 AND MUID = #{muid, jdbcType=CHAR}
+				</if>
+				<if test="wumark!= null" >
+					 AND WUMARK = #{wumark, jdbcType=CHAR}
+				</if>
+				<if test="localname!= null" >
+					 AND LOCALNAME = #{localname, jdbcType=VARCHAR}
+				</if>
+			for update
+		</select>					 		
+			
+		<insert id="insSuboutput"  parameterType="cn.com.git.cbs.engine.datamodel.TBL_Suboutput" >	
+			insert into SUBOUTPUT
+			(MUID,WUMARK,POOLWUMARK,
+			POOLNAME,MAPMODE,LOCALNAME,FIXVALUE,
+			DATADICNAME)
+			values
+			(#{muid,jdbcType=CHAR},#{wumark,jdbcType=CHAR},#{poolwumark,jdbcType=CHAR},
+			#{poolname,jdbcType=VARCHAR},#{mapmode,jdbcType=CHAR},#{localname,jdbcType=VARCHAR},#{fixvalue,jdbcType=VARCHAR},
+			#{datadicname,jdbcType=CHAR})
+		</insert>					 		
+			
+		<update id="updSuboutputByIdx1"  parameterType="cn.com.git.cbs.engine.datamodel.TBL_Suboutput" >	
+			update SUBOUTPUT
+			<set>
+				<if test="muid!= null" >
+					MUID = #{muid, jdbcType=CHAR},
+				</if>
+				<if test="wumark!= null" >
+					WUMARK = #{wumark, jdbcType=CHAR},
+				</if>
+				<if test="poolwumark!= null" >
+					POOLWUMARK = #{poolwumark, jdbcType=CHAR},
+				</if>
+				<if test="poolname!= null" >
+					POOLNAME = #{poolname, jdbcType=VARCHAR},
+				</if>
+				<if test="mapmode!= null" >
+					MAPMODE = #{mapmode, jdbcType=CHAR},
+				</if>
+				<if test="localname!= null" >
+					LOCALNAME = #{localname, jdbcType=VARCHAR},
+				</if>
+				<if test="fixvalue!= null" >
+					FIXVALUE = #{fixvalue, jdbcType=VARCHAR},
+				</if>
+				<if test="datadicname!= null" >
+					DATADICNAME = #{datadicname, jdbcType=CHAR}
+				</if>
+			</set>
+			where
+				<if test="muid!= null" >
+					 AND MUID = #{muid, jdbcType=CHAR}
+				</if>
+				<if test="wumark!= null" >
+					 AND WUMARK = #{wumark, jdbcType=CHAR}
+				</if>
+				<if test="localname!= null" >
+					 AND LOCALNAME = #{localname, jdbcType=VARCHAR}
+				</if>
+		</update>					 		
+			
+		<delete id="delSuboutputByIdx1"  parameterType="cn.com.git.cbs.engine.datamodel.TBL_Suboutput" >	
+			delete from SUBOUTPUT
+			where 1=1
+				<if test="muid!= null" >
+					 AND MUID = #{muid, jdbcType=CHAR}
+				</if>
+				<if test="wumark!= null" >
+					 AND WUMARK = #{wumark, jdbcType=CHAR}
+				</if>
+				<if test="localname!= null" >
+					 AND LOCALNAME = #{localname, jdbcType=VARCHAR}
+				</if>
+		</delete>					 		
+  	  	  	
+</mapper>      					  			 
+
+
+
+		
+		
+	
+		

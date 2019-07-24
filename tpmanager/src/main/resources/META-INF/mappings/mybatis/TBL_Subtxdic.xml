@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="cn.com.git.cbs.engine.datamodel.TBL_Subtxdic" >
+  		<resultMap id="BaseResultMap" type="cn.com.git.cbs.engine.datamodel.TBL_Subtxdic" >
+			<result column="WUID" property="wuid" jdbcType="CHAR" />					 		
+			<result column="LOCALNAME" property="localname" jdbcType="CHAR" />					 		
+			<result column="MEMO" property="memo" jdbcType="CHAR" />					 		
+			<result column="DICTTYPE" property="dicttype" jdbcType="CHAR" />					 		
+			<result column="INOUTFLAG" property="inoutflag" jdbcType="CHAR" />					 		
+			<result column="COND" property="cond" jdbcType="VARCHAR" />					 		
+		</resultMap>
+
+ 		<sql id="Base_Column_List" >
+			WUID,LOCALNAME,MEMO,
+			DICTTYPE,INOUTFLAG,COND
+		</sql> 	
+  	  	  	
+</mapper>      					  			 
+
+
+
+		
+		
+	
+		

@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<inMessage>
+	<element name="BankCode" xpath="BankCode"
+		type="String" />
+	<element name="Brc" xpath="Brc"
+		type="String" />
+	<element name="BrcName0" xpath="BrcName0"
+		type="String" />
+	<element name="BrcType0" xpath="BrcType0"
+		type="String" />
+	<element name="BrcState0" xpath="BrcState0"
+		type="String" />
+	<element name="Teller" xpath="Teller"
+		type="String" />
+	<element name="TellerName" xpath="TellerName"
+		type="String" />
+	<element name="TellerLvl0" xpath="TellerLvl0"
+		type="String" />
+	<element name="TellerType" xpath="TellerType"
+		type="String" />
+	<element name="TellerState0" xpath="TellerState0"
+		type="String" />
+	<element name="TellerFlag" xpath="TellerFlag"
+		type="String" />
+	<element name="FrontCtrlFlag" xpath="FrontCtrlFlag"
+		type="String" />
+	<element name="AuthFlag" xpath="AuthFlag"
+		type="String" />
+	<element name="ReviewFlag" xpath="ReviewFlag"
+		type="String" />
+	<element name="FileFlag" xpath="FileFlag"
+		type="String" />
+	<element name="FeeFlag" xpath="FeeFlag"
+		type="String" />
+	<element name="FeeModFlag1" xpath="FeeModFlag1"
+		type="String" />
+	<element name="FileName" xpath="FileName"
+		type="String" />
+	<element name="ChannelId" xpath="ChannelId"
+		type="String" />
+	<element name="TranDate" xpath="TranDate"
+		type="String" />
+	<element name="TranTime" xpath="TranTime"
+		type="String" />
+	<element name="TranName" xpath="TranName"
+		type="String" />
+	<element name="NoticeMsg" xpath="NoticeMsg"
+		type="String" />
+	<element name="CDDM" xpath="CDDM" type="String" />
+	<element name="CDMC" xpath="CDMC" type="String" />
+	<element name="InqFormid" xpath="InqFormid"
+		type="String" />
+	<element name="HsmId" xpath="HsmId"
+		type="String" />
+	<element name="RspCode" xpath="RspCode"
+		type="String" />
+	<element name="RspMsg" xpath="FileName"
+		type="RspMsg" />
+	<element name="SerSeqNo" xpath="SerSeqNo"
+		type="String" />
+	<element name="ABrc" xpath="ABrc"
+		type="String" />
+	<element name="ATeller" xpath="ATeller"
+		type="String" />
+	<element name="ATelName" xpath="ATelName"
+		type="String" />
+	<element name="ATellerFlag" xpath="ATellerFlag"
+		type="String" />
+	<element name="AuthArea" xpath="AuthArea"
+		type="String" />
+	<element name="AuthArr" xpath="AuthArr"
+		type="String" />
+	<element name="AuthCode" xpath="AuthCode"
+		type="String" />
+	<element name="AuthMsg" xpath="AuthMsg"
+		type="String" />
+	<element name="AuthNoticeMsg" xpath="AuthNoticeMsg"
+		type="String" />
+	<element name="AuthSeq" xpath="AuthSeq"
+		type="String" />
+	<element name="AuthWork" xpath="AuthWork"
+		type="String" />
+	<list name="FeeInfo" xpath="FeeInfo">
+		<element name="FeeCode" xpath="FeeCode" type="String" />
+		<element name="FeeDesc" xpath="FeeDesc" type="String" />
+		<element name="FeeCcy" xpath="FeeCcy" type="String" />
+		<element name="FeeAmt" xpath="FeeAmt" type="String" />
+		<element name="FeeAcctNo" xpath="FeeAcctNo" type="String" />
+		<element name="FeePayAcctNo" xpath="FeePayAcctNo" type="String" />
+		<element name="FeePaySubAcct" xpath="FeePaySubAcct" type="String" />
+		<element name="FeeBrcType" xpath="FeeBrcType" type="String" />
+		<element name="FeeBrcCode" xpath="FeeBrcCode" type="String" />
+		<element name="FeePaySrc" xpath="FeePaySrc" type="String" />
+		<element name="FeeCashItemCode" xpath="FeeCashItemCode" type="String" />
+	</list>
+	<element name="ReviewNo" xpath="ReviewNo"
+		type="String" />
+	<element name="RTeller" xpath="RTeller"
+		type="String" />
+	<element name="RTelName" xpath="RTelName"
+		type="String" />
+	<element name="TermId" xpath="TermId"
+		type="String" />
+	<element name="TermDate" xpath="TermDate"
+		type="String" />
+	<element name="TermTime" xpath="TermTime"
+		type="String" />
+	<element name="TermSeq" xpath="TermSeq"
+		type="String" />
+	<element name="OrigTermCode" xpath="OrigTermCode"
+		type="String" />
+	<element name="OrigTermDate" xpath="OrigTermDate"
+		type="String" />
+	<element name="OrigTermSeq" xpath="OrigTermSeq"
+		type="String" />
+	<element name="TellerCode" xpath="TellerCode"
+		type="String" />
+</inMessage>

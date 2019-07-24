@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Transaction>
+	<Comdict>
+		<PartyRef>
+			<BankCode>103</BankCode>
+			<Brc>101001</Brc>
+			<BrcName0>任县村营业部</BrcName0>
+			<BrcType0>11</BrcType0>
+			<BrcState0>2</BrcState0>
+			<Teller>101008</Teller>
+			<TellerName>测试柜员1</TellerName>
+			<TellerLvl0>7</TellerLvl0>
+			<TellerType>15</TellerType>
+			<TellerState0>2</TellerState0>
+			<TellerFlag>2</TellerFlag>
+		</PartyRef>
+		<FlagRef />
+		<ChannelId>12</ChannelId>
+		<TranDate>2017-05-22</TranDate>
+		<TranTime>172841</TranTime>
+		<TranName>查询柜员基本信息</TranName>
+		<CDDM>650101</CDDM>
+		<CDMC>柜员基本信息维护</CDMC>
+		<InqFormid>查询格式编号</InqFormid>
+		<HsmId>101123.zpk</HsmId>
+		<TermRef />
+	</Comdict>
+	<Txndict>
+		<TellerCode>101008</TellerCode>
+	</Txndict>
+</Transaction>

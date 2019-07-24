@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="cn.com.git.cbs.engine.datamodel.TBL_Cmrspcode" >
+  	<resultMap id="BaseResultMap" type="cn.com.git.cbs.engine.datamodel.TBL_Cmrspcode" >
+			<result column="RSPCODE" property="rspcode" jdbcType="CHAR" />					 		
+			<result column="MEMO" property="memo" jdbcType="CHAR" />					 		
+			<result column="STDRSPCODE" property="stdrspcode" jdbcType="CHAR" />					 		
+		</resultMap>
+
+ 		<sql id="Base_Column_List" >
+    	RSPCODE,MEMO,STDRSPCODE
+  	</sql> 	
+			
+		<select id="selCmrspcodeByIdx1" resultMap="BaseResultMap" parameterType="cn.com.git.cbs.engine.datamodel.TBL_Cmrspcode" >	
+		 	
+ 		 select
+		<include refid="Base_Column_List" />
+		from CMRSPCODE
+		where  1=1
+			<if test="rspcode!= null" >
+				 AND RSPCODE = #{rspcode, jdbcType=CHAR}
+			</if>
+  	</select>					 		
+			
+		<select id="selCmrspcodeListByIdx1" resultMap="BaseResultMap" parameterType="cn.com.git.cbs.engine.datamodel.TBL_Cmrspcode" >	
+		 	
+ 		 select
+		<include refid="Base_Column_List" />
+		from CMRSPCODE
+		where  1=1
+			<if test="rspcode!= null" >
+				 AND RSPCODE = #{rspcode, jdbcType=CHAR}
+			</if>
+			<if test="memo!= null" >
+				 AND MEMO = #{memo, jdbcType=CHAR}
+			</if>
+			<if test="stdrspcode!= null" >
+				 AND STDRSPCODE = #{stdrspcode, jdbcType=CHAR}
+			</if>
+		
+  	</select>					 		
+			
+		<select id="selupdCmrspcodeByIdx1" resultMap="BaseResultMap" parameterType="cn.com.git.cbs.engine.datamodel.TBL_Cmrspcode" >	
+		 	
+ 		 select
+		<include refid="Base_Column_List" />
+		from CMRSPCODE
+		where  1=1
+			<if test="rspcode!= null" >
+				 AND RSPCODE = #{rspcode, jdbcType=CHAR}
+			</if>
+		for update
+  	</select>					 		
+			
+		<insert id="insCmrspcode"  parameterType="cn.com.git.cbs.engine.datamodel.TBL_Cmrspcode" >	
+		 	
+ 		 insert into CMRSPCODE
+		(RSPCODE,MEMO,STDRSPCODE)
+		values
+		(#{rspcode,jdbcType=CHAR},#{memo,jdbcType=CHAR},#{stdrspcode,jdbcType=CHAR})
+  	</insert>					 		
+			
+		<update id="updCmrspcodeByIdx1"  parameterType="cn.com.git.cbs.engine.datamodel.TBL_Cmrspcode" >	
+		 	
+ 		 update CMRSPCODE
+		<set>
+			<if test="rspcode!= null" >
+				RSPCODE = #{rspcode, jdbcType=CHAR},
+			</if>
+			<if test="memo!= null" >
+				MEMO = #{memo, jdbcType=CHAR},
+			</if>
+			<if test="stdrspcode!= null" >
+				STDRSPCODE = #{stdrspcode, jdbcType=CHAR}
+			</if>
+		</set>
+		where
+			<if test="rspcode!= null" >
+				 AND RSPCODE = #{rspcode, jdbcType=CHAR}
+			</if>
+  	</update>					 		
+			
+		<delete id="delCmrspcodeByIdx1"  parameterType="cn.com.git.cbs.engine.datamodel.TBL_Cmrspcode" >	
+		 	
+ 		 delete from CMRSPCODE
+		where 1=1
+			<if test="rspcode!= null" >
+				 AND RSPCODE = #{rspcode, jdbcType=CHAR}
+			</if>
+  	</delete>					 		
+  	  	  	
+</mapper>      					  			 
+
+
+
+		
+		
+	
+		

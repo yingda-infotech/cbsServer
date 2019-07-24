@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="cn.com.git.cbs.engine.datamodel.TBL_Tranflow" >
+  		<resultMap id="BaseResultMap" type="cn.com.git.cbs.engine.datamodel.TBL_Tranflow" >
+			<result column="MUID" property="muid" jdbcType="CHAR" />					 		
+			<result column="WORKSEQ" property="workseq" jdbcType="INTEGER" />					 		
+			<result column="WUID" property="wuid" jdbcType="CHAR" />					 		
+			<result column="WUMARK" property="wumark" jdbcType="CHAR" />					 		
+			<result column="ENTRYCOND" property="entrycond" jdbcType="VARCHAR" />					 		
+			<result column="ENTRYFUNC" property="entryfunc" jdbcType="VARCHAR" />					 		
+			<result column="CTRLMODE" property="ctrlmode" jdbcType="CHAR" />					 		
+			<result column="COMMITMODE" property="commitmode" jdbcType="CHAR" />					 		
+			<result column="FLOWMODE" property="flowmode" jdbcType="CHAR" />					 		
+			<result column="PREWUMARK" property="prewumark" jdbcType="CHAR" />					 		
+			<result column="CLEARPRDT" property="clearprdt" jdbcType="CHAR" />					 		
+			<result column="FEETYPE" property="feetype" jdbcType="CHAR" />					 		
+			<result column="ANALYSECODE" property="analysecode" jdbcType="CHAR" />					 		
+			<result column="CLASSCODE1" property="classcode1" jdbcType="CHAR" />					 		
+			<result column="CLASSCODE2" property="classcode2" jdbcType="CHAR" />					 		
+			<result column="CLASSCODE3" property="classcode3" jdbcType="CHAR" />					 		
+			<result column="CLASSCODE4" property="classcode4" jdbcType="CHAR" />					 		
+			<result column="PARAM1" property="param1" jdbcType="CHAR" />					 		
+			<result column="PARAM2" property="param2" jdbcType="CHAR" />					 		
+			<result column="PARAM3" property="param3" jdbcType="CHAR" />					 		
+			<result column="MEMO" property="memo" jdbcType="CHAR" />					 		
+		</resultMap>
+
+ 		<sql id="Base_Column_List" >
+			MUID,WORKSEQ,WUID,
+			WUMARK,ENTRYCOND,ENTRYFUNC,CTRLMODE,
+			COMMITMODE,FLOWMODE,PREWUMARK,CLEARPRDT,
+			FEETYPE,ANALYSECODE,CLASSCODE1,CLASSCODE2,
+			CLASSCODE3,CLASSCODE4,PARAM1,PARAM2,
+			PARAM3,MEMO
+		</sql> 	
+			
+		<select id="selTranflowListByIdx1" resultMap="BaseResultMap" parameterType="cn.com.git.cbs.engine.datamodel.TBL_Tranflow" >	
+			select
+			<include refid="Base_Column_List" />
+			from TRANFLOW
+			where  1=1
+				<if test="muid!= null" >
+					 AND MUID = #{muid, jdbcType=CHAR}
+				</if>
+			 ORDER BY muid,workseq
+		</select>					 		
+  	  	  	
+</mapper>      					  			 
+
+
+
+		
+		
+	
+		

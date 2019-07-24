@@ -1,0 +1,48 @@
+{"Transaction":{"Comdict":{
+<#assign f1="true">
+<#if bankcode??>
+<#if f1="false">,</#if>"BankCode":"${bankcode}"<#assign f1="false"> 
+</#if>
+<#if brc??>
+<#if f1="false">,</#if>"Brc":"${brc}"<#assign f1="false"> 
+</#if>
+<#if brcname0??>
+<#if f1="false">,</#if>"BrcName0":"${brcname0}"<#assign f1="false"> 
+</#if>
+<#if f1="false">,</#if>
+"FlagRef":{
+<#assign f11="true">
+<#if frontctrlflag??>
+<#if f11="false">,</#if>"FrontCtrlFlag":"${frontctrlflag}"<#assign f11="false"> 
+</#if>
+<#if authflag??>
+<#if f11="false">,</#if>"AuthFlag":"${authflag}"<#assign f11="false"> 
+</#if>}<#assign f1="false">
+<#if filename??>
+<#if f1="false">,</#if>"FileName":"${filename}"<#assign f1="false"> 
+</#if>
+<#if f1="false">,</#if>"AuthRef":{
+<#assign f11="true">
+<#if abrc??>
+<#if f11="false">,</#if>"ABrc":"${abrc}"<#assign f11="false"> 
+</#if>
+<#if ateller??><#if f11="false">,</#if>"ATeller":"${ateller}"<#assign f11="false"></#if>
+}<#assign f1="false">
+<#if feeinfo?? && (feeinfo?size>0)>
+<#if f1="false">,</#if>"FeeInfo":[<#list feeinfo as f>{<#assign f11="true">
+<#if f.feecode??><#if f11="false">,</#if>"FeeCode":"${f.feecode}"<#assign f11="false"></#if>
+<#if f.feedesc??><#if f11="false">,</#if>"FeeDesc":"${f.feedesc}"<#assign f11="false"></#if>
+<#if f.feecode??><#if f11="false">,</#if>"FeeCode":"${f.feecode}"<#assign f11="false"></#if>
+}<#if f_has_next>,</#if></#list>]
+<#assign f1="false">
+</#if>
+},
+"Txndict":{
+<#assign f1="true">
+<#if tellercode??>
+<#if f1="false">,</#if>"TellerCode":"${tellercode}"<#assign f1="false"> 
+</#if>
+<#if .globals["01.enddate"]??>
+<#if f1="false">,</#if>"EndDate":"${.globals["01.enddate"]}"<#assign f1="false"> 
+</#if>
+}}}
