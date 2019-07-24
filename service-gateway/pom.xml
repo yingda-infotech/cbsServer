@@ -1,0 +1,28 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<artifactId>service-gateway</artifactId>
+	<dependencies>
+		<dependency>
+			<groupId>io.netty</groupId>
+			<artifactId>netty-all</artifactId>
+		</dependency>
+		<!-- 引入CBS的工程，这样就可以调用CBS下面的代码 -->
+		<dependency>
+			<groupId>cn.com.git.cbs</groupId>
+			<artifactId>tpcore</artifactId>
+			<version>${cbs.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>cn.com.git.cbs</groupId>
+			<artifactId>message-conv</artifactId>
+			<version>${cbs.version}</version>
+		</dependency>
+	</dependencies>
+	<parent>
+		<groupId>cn.com.git.cbs</groupId>
+		<artifactId>parent</artifactId>
+		<version>0.0.1-SNAPSHOT</version>
+		<relativePath></relativePath>
+	</parent>
+</project>
